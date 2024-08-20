@@ -1,0 +1,39 @@
+services:
+
+  # 1: application
+
+  thesis-app:
+    container_name: thesis-app
+    image: thesis-app
+    hostname: thesis-app
+    restart: unless-stopped
+    volumes:
+      - "./services/app/config:/container-config"
+      - "./services/app/data:/container-data"
+    ports:
+      - 44444:44444
+
+  # 2: database
+
+  thesis-db:
+    container_name: thesis-db
+    image: thesis-db
+    hostname: thesis-db
+    restart: unless-stopped
+    volumes:
+      - "./services/db/config:/container-config"
+      - "./services/db/data:/container-data"
+
+  # 3: VScode, GIT
+
+  vscode:
+    container_name: vscode
+    image: vscode
+    hostname: vscode
+    restart: unless-stopped
+    volumes:
+      - "./services/vscode/config:/container-config"
+      - "./services/vscode/data:/container-data"
+      - "/docker-resources:/code-repo"
+    ports:
+      - 55555:55555

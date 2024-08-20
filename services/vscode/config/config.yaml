@@ -1,0 +1,4 @@
+bind-addr: 0.0.0.0:55555
+auth: password
+password: "asdasd"
+cert: false
