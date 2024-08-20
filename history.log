@@ -2,11 +2,25 @@
 
 sudo groupadd -g 2000 -r dock_group
 sudo useradd -g 2000 -r -M -N dock_user
-umask 0027
-sudo mkdir /docker-services
-nano /docker-services/Dockerfile
 
-# DOCKER INSTALL #
+# DIRECTORY STRUCTURE
+
+mkdir /docker-resources
+mkdir /docker-resources/services
+mkdir /docker-resources/services/app
+mkdir /docker-resources/services/db
+mkdir /docker-resources/services/vscode
+
+mkdir /docker-resources/services/app/config
+mkdir /docker-resources/services/app/data
+mkdir /docker-resources/services/db/config
+mkdir /docker-resources/services/db/data
+mkdir /docker-resources/services/vscode/config
+mkdir /docker-resources/services/vscode/data
+
+chown dock_user:dock_group -R /docker-resources
+
+# DOCKER INSTALL
 # SOURCES:
 # https://docs.docker.com/engine/install/debian/#install-using-the-repository
 
@@ -23,3 +37,15 @@ echo \
 apt update
 
 apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# GIT INNIT
+
+git init --initial-branch=main
+git remote add origin -t main https://github.com/t-balint-k/szakdolgozat.git
+git pull origin main --allow-unrelated-histories
+git config --global user.name t-balint-k
+git config --global user.email t.balint.k@gmail.com
+
+# DOTNET INIT
+
+dotnet new webapi --use-program-main -n webservice -o .
