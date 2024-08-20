@@ -1,2 +1,3 @@
 services/db/data
 services/vscode/data
+services/app/data/obj/project.nuget.cache
