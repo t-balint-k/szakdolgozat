@@ -460,19 +460,19 @@
     ]
   },
   "packageFolders": {
-    "/container-data/.nuget/packages/": {}
+    "/home/dock_user/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/code-repo/services/app/data/webservice.csproj",
+      "projectUniqueName": "/container-data/webservice.csproj",
       "projectName": "webservice",
-      "projectPath": "/code-repo/services/app/data/webservice.csproj",
-      "packagesPath": "/container-data/.nuget/packages/",
-      "outputPath": "/code-repo/services/app/data/obj/",
+      "projectPath": "/container-data/webservice.csproj",
+      "packagesPath": "/home/dock_user/.nuget/packages/",
+      "outputPath": "/container-data/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/container-data/.nuget/NuGet/NuGet.Config"
+        "/home/dock_user/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

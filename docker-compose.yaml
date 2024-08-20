@@ -37,3 +37,4 @@ services:
       - "/docker-resources:/code-repo"
     ports:
       - 55555:55555
+      - 5131:5131
