@@ -1,3 +1,13 @@
 services/db/data
 services/vscode/data
 services/app/data/obj/project.nuget.cache
+services/app/data/bin/Debug/net8.0/webservice
+services/app/data/obj/Debug/net8.0/apphost
+services/app/data/obj/Debug/net8.0/webservice.AssemblyInfo.cs
+services/app/data/obj/Debug/net8.0/webservice.GlobalUsings.g.cs
+services/app/data/obj/Debug/net8.0/webservice.MvcApplicationPartsAssemblyInfo.cs
+services/app/data/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+*.dll
+*.pdb
+*.cache
