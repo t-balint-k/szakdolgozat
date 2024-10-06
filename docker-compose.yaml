@@ -12,6 +12,7 @@ services:
       - "./services/app/data:/container-data"
     ports:
       - 44444:44444
+      - 5131:5131
 
   # 2: database
 
@@ -37,4 +38,19 @@ services:
       - "/docker-resources:/code-repo"
     ports:
       - 55555:55555
-      - 5131:5131
+
+  # 4: PGadmin 4
+
+  pgadmin:
+    container_name: pgadmin
+    image: pgadmin
+    hostname: pgadmin
+    restart: unless-stopped
+    volumes:
+      - "./services/pgadmin/config:/container-config"
+      - "./services/pgadmin/data:/container-data"
+    environment:
+      - "PGADMIN_DEFAULT_EMAIL=balint.toth@stud.uni-corvinus.hu"
+      - "PGADMIN_DEFAULT_PASSWORD=asdasd"
+    ports:
+      - 33333:80
